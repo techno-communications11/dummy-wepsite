@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "GAUVARON CORPORATE SOLUTIONS",
   description:
-    "Global BPO, IT, and HR services with dependable delivery, inspired by technocommunicationsglobal.com.",
+    "Global BPO, IT, and HR services with dependable delivery",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
