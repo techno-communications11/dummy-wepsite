@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 type CareerOpening = {
   title: string;
@@ -43,10 +42,9 @@ export default function CareersSection({ openings, imageUrl }: CareersSectionPro
           </a>
         </div>
         <div className="relative h-72 w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50">
-          <Image
+          <img
             src={imageUrl}
             alt="Team working together"
-            fill
             sizes="(max-width: 1024px) 100vw, 480px"
             className="object-cover"
           />

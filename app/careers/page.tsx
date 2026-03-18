@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FormEvent, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -99,8 +98,8 @@ export default function CareersPage() {
       <main className="mx-auto flex max-w-7xl flex-col gap-16 px-6 py-10 lg:py-16">
         <section className="grid gap-8  bg-white p-10  lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="space-y-5">
-            <h1 className="text-3xl text-bolder text-[#237B80]">Careers</h1>
-            <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+          <h1 className="text-2xl text-bolder text-[#237B80] sm:text-3xl">Careers</h1>
+          <h1 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl md:text-5xl">
               Build with us and engineer the future of dependable technology services.
             </h1>
             <p className="text-lg text-slate-600">
@@ -117,10 +116,9 @@ export default function CareersPage() {
             </div>
           </div>
           <div className="relative h-80 w-full overflow-hidden  bg-slate-50">
-            <Image
+            <img
               src={heroImage}
               alt="Leadership team"
-              fill
               sizes="(max-width: 1024px) 100vw, 420px"
               className="object-cover"
             />
@@ -129,7 +127,7 @@ export default function CareersPage() {
 
         <section className="grid gap-10  bg-white p-10  lg:grid-cols-[0.95fr_1fr] lg:items-center">
           <div className="space-y-5">
-            <h2 className="text-3xl font-semibold text-slate-900">Why Join GAUVARON CORPORATE SOLUTIONS?</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Why Join GAUVARON CORPORATE SOLUTIONS?</h2>
             <p className="text-md text-slate-600">
               We operate with discipline and empathy so that every employee can grow, learn, and feel supported.
             </p>
@@ -147,10 +145,9 @@ export default function CareersPage() {
             </div>
           </div>
           <div className="relative h-72 w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50">
-            <Image
+            <img
               src={teamworkImage}
               alt="Team collaborating"
-              fill
               sizes="(max-width: 1024px) 100vw, 420px"
               className="object-cover"
             />
@@ -158,7 +155,7 @@ export default function CareersPage() {
         </section>
 
         <section className=" bg-white p-10 ">
-          <h2 className="text-3xl font-semibold text-slate-900">Submit your interest</h2>
+          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Submit your interest</h2>
           <p className="mt-2 text-md text-slate-600">
             Please complete the form below and include a Google Drive link to your resume/portfolio since we don’t
             maintain an internal database yet. We’ll reply via email within a couple of business days.

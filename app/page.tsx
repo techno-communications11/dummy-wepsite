@@ -4,7 +4,6 @@ import ServicesSection from "./components/ServicesSection";
 import ApproachSection from "./components/ApproachSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -87,21 +86,21 @@ export default function Home() {
   return (
     <div className="bg-white text-slate-900">
       <Navbar links={navLinks} />
-      <div className="mx-auto max-w-7xl space-y-16 px-6 py-6 lg:py-10">
+      <div className="mx-auto max-w-8xl space-y-16 px-6 py-6 lg:py-10">
         <section className="rounded-[32px] ">
           <div className="space-y-5 text-center">
-            <h2 className="text-5xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
               Welcome to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#237B80] to-[#2DD7D1]">
                 GAUVARON CORPORATE SOLUTIONS
               </span>
             </h2>
-            <p className="text-lg text-slate-600 mx-auto max-w-3xl">
+            <p className="text-base text-slate-600 mx-auto max-w-3xl sm:text-lg">
               We blend modern IT, BPO, and HR services with a human-first
               delivery model. Explore our vision, services, and leadership to
               find the right partnership path.
             </p>{" "}
-            <p className="text-lg text-slate-600 mx-auto max-w-3xl">
+            <p className="text-base text-slate-600 mx-auto max-w-3xl sm:text-lg">
               Build career with us
             </p>
           </div>
@@ -186,11 +185,13 @@ export default function Home() {
         />
 
         <section className="rounded-[32px]  bg-white p-10 ">
-          <p className="text-5xl uppercase text-[#237B80]">From our CEO</p>
+          <p className="text-3xl font-semibold uppercase text-[#237B80] sm:text-4xl">
+            From our CEO
+          </p>
 
           <div className="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
             <div>
-              <h2 className="text-3xl font-semibold text-slate-900">
+              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 Leadership that you can hear from the very first conversation.
               </h2>
               <p className="mt-4 text-md text-slate-600">
@@ -215,10 +216,9 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-72 w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50">
-              <Image
+              <img
                 src={remoteImages.ceo}
                 alt="CEO portrait"
-                fill
                 sizes="(max-width: 1024px) 100vw, 420px"
                 className="object-cover"
               />

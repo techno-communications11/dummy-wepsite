@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 type ApproachStep = {
   title: string;
@@ -29,10 +28,9 @@ export default function ApproachSection({ steps, imageUrl }: ApproachSectionProp
           </div>
         </div>
         <div className="relative h-72 w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50">
-          <Image
+          <img
             src={imageUrl}
             alt="Modern workspace"
-            fill
             sizes="(max-width: 1024px) 100vw, 480px"
             className="object-cover"
           />

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -50,11 +49,11 @@ export default function CeoMessagePage() {
       <main className="mx-auto flex max-w-7xl flex-col gap-16 px-6 py-10 lg:py-16">
         <section className="grid gap-10  bg-white p-10  lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="space-y-6">
-            <p className="text-4xl text-[#237B80]">Letter from the CEO</p>
-            <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+            <p className="text-3xl text-[#237B80] sm:text-4xl">Letter from the CEO</p>
+            <h1 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl md:text-5xl">
               Purposeful leadership that keeps our people and partners moving forward.
             </h1>
-            <p className="text-lg text-slate-600">
+            <p className="text-base text-slate-600 sm:text-lg">
               I am proud to lead GAUVARON CORPORATE SOLUTIONS as we redefine dependable IT, BPO, and HR delivery. Our
               teams partner with you, not just to solve today’s challenges, but to prepare you for what’s next.
               Transparency, measurable outcomes, and a relentless drive to elevate human potential are at the heart of
@@ -63,10 +62,9 @@ export default function CeoMessagePage() {
   
           </div>
           <div className="relative h-80 w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50">
-            <Image
+            <img
               src={heroImage}
               alt="CEO speaking"
-              fill
               sizes="(max-width: 1024px) 100vw, 420px"
               className="object-cover"
             />
@@ -75,7 +73,7 @@ export default function CeoMessagePage() {
 
         <section className="space-y-6 bg-white p-10 ">
           <div>
-            <h2 className="text-4xl font-bold text-center mb-3 text-[#237B80]">A message to our clients and colleagues</h2>
+            <h2 className="text-3xl font-bold text-center mb-3 text-[#237B80] sm:text-4xl">A message to our clients and colleagues</h2>
             <p className="mt-3 text-md text-slate-600 mt-3 text-center">
               The most meaningful work happens when we align around a shared definition of success. <br/>I invite every
               partner to hold us accountable to the promises we make—about uptime,<br/> strategic direction, and the wellbeing
