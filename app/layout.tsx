@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Techno Communications Group",
+  title: "GAUVARON CORPORATE SOLUTIONS",
   description:
     "Global BPO, IT, and HR services with dependable delivery, inspired by technocommunicationsglobal.com.",
   icons: {
