@@ -14,7 +14,7 @@ export default function HeroSection({ heroHighlights, imageUrl }: HeroSectionPro
       id="about"
       className="space-y-10   bg-white p-10"
     >
-      <p className="text-5xl  text-center text-bolder text-emerald-500">About us</p>
+      <p className="text-5xl  text-center text-bolder text-[#237B80]">About us</p>
       <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
         <div className="space-y-6">
           <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
@@ -26,7 +26,7 @@ export default function HeroSection({ heroHighlights, imageUrl }: HeroSectionPro
           <ul className="space-y-3 text-md text-slate-600">
             {heroHighlights.map((highlight) => (
               <li key={highlight} className="flex gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-[#237B80]" />
                 {highlight}
               </li>
             ))}

@@ -77,11 +77,10 @@ const contact = {
 };
 
 const remoteImages = {
-  hero: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80",
-  services:
-    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=900&q=80",
-  approach:
-    "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=900&q=80",
+  hero: "/enjoy.webp",
+  services: "/code.webp",
+  approach: "/bulb.webp",
+  ceo: "/office.webp",
 };
 
 export default function Home() {
@@ -93,7 +92,7 @@ export default function Home() {
           <div className="space-y-5 text-center">
             <h2 className="text-5xl font-bold tracking-tight text-slate-900">
               Welcome to{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e10174] to-[#a504ff]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#237B80] to-[#2DD7D1]">
                 GAUVARON CORPORATE SOLUTIONS
               </span>
             </h2>
@@ -109,13 +108,13 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-4 text-md font-semibold uppercase  md:flex-row md:justify-center">
             <a
               href="/careers"
-              className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#e10174] to-[#a504ff] px-8 py-3 text-white transition hover:opacity-90"
+            className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2D9EA4] to-[#2DD7D1] px-8 py-3 text-white transition hover:opacity-90"
             >
               Join Our Team <span aria-hidden>→</span>
             </a>
             <a
               href="#contact"
-              className="flex items-center justify-center gap-2 rounded-full border border-pink-500 px-8 py-3 text-pink-600 transition hover:bg-pink-50"
+            className="flex items-center justify-center gap-2 rounded-full border border-[#2D9EA4] px-8 py-3 text-[#2D9EA4] transition hover:bg-[#e3f6f4]"
             >
               Contact Us
             </a>
@@ -149,7 +148,7 @@ export default function Home() {
               <ul className="mt-4 space-y-2 text-md text-slate-600">
                 {focusAreas.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#237B80]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -187,7 +186,7 @@ export default function Home() {
         />
 
         <section className="rounded-[32px]  bg-white p-10 ">
-          <p className="text-5xl uppercase text-emerald-500">From our CEO</p>
+          <p className="text-5xl uppercase text-[#237B80]">From our CEO</p>
 
           <div className="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
             <div>
@@ -209,7 +208,7 @@ export default function Home() {
                 </a>
                 <a
                   href="/careers"
-                  className="rounded-full border border-slate-900 px-6 py-3 text-[15px] uppercase font-semibold  text-slate-900 transition hover:border-emerald-500"
+                  className="rounded-full border border-slate-900 px-6 py-3 text-[15px] uppercase font-semibold  text-slate-900 transition hover:border-[#237B80]"
                 >
                   Explore careers
                 </a>
@@ -217,7 +216,7 @@ export default function Home() {
             </div>
             <div className="relative h-72 w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50">
               <Image
-                src={remoteImages.hero}
+                src={remoteImages.ceo}
                 alt="CEO portrait"
                 fill
                 sizes="(max-width: 1024px) 100vw, 420px"

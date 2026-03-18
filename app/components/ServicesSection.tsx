@@ -39,7 +39,7 @@ export default function ServicesSection({ services, stats, imageUrl }: ServicesS
             ))}
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <article className="space-y-3 rounded-2xl bg-gradient-to-br from-pink-500 to-fuchsia-500 p-5 text-white ">
+            <article className="space-y-3 rounded-2xl bg-gradient-to-br from-[#2D9EA4] to-[#2DD7D1] p-5 text-white ">
               <h4 className="text-xl font-semibold">BPO Services</h4>
               <p className="text-md text-white/80">
                 From contact center delivery to back-office operations and analytics, we embed automation and

@@ -39,7 +39,7 @@ type ContactSectionProps = {
 export default function ContactSection({ contact }: ContactSectionProps) {
   return (
     <section id="contact" className="mx-auto flex max-w-6xl flex-col gap-10">
-       <p className="text-3xl text-center uppercase  text-emerald-500">Contact</p>
+       <p className="text-3xl text-center uppercase  text-[#237B80]">Contact</p>
       <div className="space-y-2">
        
         <h3 className="text-3xl font-semibold text-slate-900">Get in Touch</h3>
@@ -52,7 +52,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
         <div className="grid gap-4 md:grid-cols-2">
           {infoCards.map((card) => (
             <article key={card.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#d958ff] to-[#ff0080] text-white">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#237B80] to-[#2DD7D1] text-white">
                 <card.icon size={22} />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">{card.title}</h4>

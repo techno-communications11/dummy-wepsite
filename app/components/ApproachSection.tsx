@@ -15,7 +15,7 @@ type ApproachSectionProps = {
 export default function ApproachSection({ steps, imageUrl }: ApproachSectionProps) {
   return (
     <section className="space-y-10 rounded-[32px]  bg-white p-10 ">
-      <p className="text-5xl text-emerald-500">Approach</p>
+      <p className="text-5xl text-semibold text-[#237B80]">Approach</p>
       <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div>
           

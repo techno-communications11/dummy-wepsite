@@ -57,7 +57,7 @@ export default function ContactForm({ email }: ContactFormProps) {
   };
 
   const inputClass =
-    "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-md text-slate-900 focus:border-emerald-400 focus:outline-none";
+    "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-md text-slate-900 focus:border-[#237B80] focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -107,7 +107,7 @@ export default function ContactForm({ email }: ContactFormProps) {
       <div className="space-y-1 text-xs uppercase text-slate-500">
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-500 to-fuchsia-500 px-6 py-3 text-[13px] font-semibold  text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#237B80] to-[#2DD7D1] px-6 py-3 text-[13px] font-semibold  text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
           disabled={isSending}
         >
           {isSending ? "Sending..." : "Send Message"}

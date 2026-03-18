@@ -5,28 +5,31 @@ export const runtime = "nodejs";
 
 const DEFAULT_RECIPIENT = "info@gauvaron.com";
 
-type ContactPayload = {
+type CareerPayload = {
   name: string;
   email: string;
-  subject: string;
+  role: string;
   message: string;
+  driveLink: string;
 };
 
 export async function POST(request: NextRequest) {
   try {
-    const rawPayload = (await request.json()) as Partial<ContactPayload>;
+    const rawPayload = (await request.json()) as Partial<CareerPayload>;
     const trimmedPayload = {
       name: (rawPayload.name ?? "").trim(),
       email: (rawPayload.email ?? "").trim(),
-      subject: (rawPayload.subject ?? "").trim(),
+      role: (rawPayload.role ?? "").trim(),
       message: (rawPayload.message ?? "").trim(),
+      driveLink: (rawPayload.driveLink ?? "").trim(),
     };
 
     if (
       !trimmedPayload.name ||
       !trimmedPayload.email ||
-      !trimmedPayload.subject ||
-      !trimmedPayload.message
+      !trimmedPayload.role ||
+      !trimmedPayload.message ||
+      !trimmedPayload.driveLink
     ) {
       return NextResponse.json(
         { error: "All fields are required." },
@@ -38,13 +41,15 @@ export async function POST(request: NextRequest) {
     const recipient = process.env.CONTACT_RECIPIENT ?? DEFAULT_RECIPIENT;
 
     await mailer.sendMail({
-      from: `"Gauvaron Website" <${process.env.GMAIL_SMTP_USER}>`,
+      from: `"Gauvaron Careers" <${process.env.GMAIL_SMTP_USER}>`,
       to: recipient,
       replyTo: trimmedPayload.email,
-      subject: `[Website Inquiry] ${trimmedPayload.subject}`,
+      subject: `[Career Interest] ${trimmedPayload.role}`,
       text: [
         `Name: ${trimmedPayload.name}`,
         `Email: ${trimmedPayload.email}`,
+        `Role: ${trimmedPayload.role}`,
+        `Resume Link: ${trimmedPayload.driveLink}`,
         "",
         trimmedPayload.message,
       ].join("\n"),
@@ -52,7 +57,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Contact form submission failed:", error);
+    console.error("Career form submission failed:", error);
 
     const message =
       error instanceof Error

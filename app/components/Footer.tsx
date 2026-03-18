@@ -25,7 +25,7 @@ export default function Footer() {
               <img src="/Gauvaron.png" alt="GAUVARON CORPORATE SOLUTIONS logo" className="h-full w-full object-cover" />
             </div>
             <div>
-              <p className="text-lg font-semibold  text-[#e10174]">GAUVARON CORPORATE SOLUTIONS</p>
+              <p className="text-lg font-semibold  text-[#237B80]">GAUVARON CORPORATE SOLUTIONS</p>
             </div>
           </div>
           <p className="text-md leading-relaxed text-slate-400">

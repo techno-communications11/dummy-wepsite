@@ -36,7 +36,7 @@ export default function CareersSection({ openings, imageUrl }: CareersSectionPro
             ))}
           </div>
           <a
-            href="https://technocommunicationsglobal.com/careers"
+            href="/careers"
             className="mt-6 inline-flex rounded-full border border-slate-200 px-6 py-3 text-xs font-semibold uppercase tracking-[0.4em] text-slate-900 transition hover:border-slate-400"
           >
             Explore open roles

@@ -40,7 +40,7 @@ const focusPillars = [
 // ];
 
 const heroImage =
-  "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1000&q=80";
+  "/write.webp";
 
 export default function CeoMessagePage() {
   return (
@@ -50,7 +50,7 @@ export default function CeoMessagePage() {
       <main className="mx-auto flex max-w-7xl flex-col gap-16 px-6 py-10 lg:py-16">
         <section className="grid gap-10  bg-white p-10  lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="space-y-6">
-            <p className="text-4xl text-emerald-500">Letter from the CEO</p>
+            <p className="text-4xl text-[#237B80]">Letter from the CEO</p>
             <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
               Purposeful leadership that keeps our people and partners moving forward.
             </h1>
@@ -75,7 +75,7 @@ export default function CeoMessagePage() {
 
         <section className="space-y-6 bg-white p-10 ">
           <div>
-            <h2 className="text-4xl font-bold text-center mb-3 text-green-900">A message to our clients and colleagues</h2>
+            <h2 className="text-4xl font-bold text-center mb-3 text-[#237B80]">A message to our clients and colleagues</h2>
             <p className="mt-3 text-md text-slate-600 mt-3 text-center">
               The most meaningful work happens when we align around a shared definition of success. <br/>I invite every
               partner to hold us accountable to the promises we make—about uptime,<br/> strategic direction, and the wellbeing

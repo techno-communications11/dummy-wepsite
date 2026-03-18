@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 import Navbar from "../components/Navbar";
-import Footer
- from "../components/Footer";
+import Footer from "../components/Footer";
 
 const navLinks = [
   { label: "About", href: "/#about" },
@@ -42,29 +41,55 @@ export default function CareersPage() {
   const [message, setMessage] = useState("");
   const [driveLink, setDriveLink] = useState("");
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const fieldClass =
-    "w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-900 focus:border-emerald-400 focus:outline-none";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-900 focus:border-[#237B80] focus:outline-none";
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const subject = role ? `Career interest: ${role}` : "Career interest";
-    const body = [
-      `Name: ${name || "—"}`,
-      `Email: ${email || "—"}`,
-      `Role: ${role || "—"}`,
-      `Message: ${message || "—"}`,
-      `Resume/Portfolio link: ${driveLink || "—"}`,
-    ].join("\n");
 
-    const gmailUrl = new URL("https://mail.google.com/mail/");
-    gmailUrl.searchParams.set("view", "cm");
-    gmailUrl.searchParams.set("fs", "1");
-    gmailUrl.searchParams.set("to", "info@gauvaron.com");
-    gmailUrl.searchParams.set("su", subject);
-    gmailUrl.searchParams.set("body", body);
+    if (isSubmitting) {
+      return;
+    }
 
-    setStatus("Opening Gmail compose…");
-    window.open(gmailUrl.toString(), "_blank");
+    setIsSubmitting(true);
+    setStatus("Sending your application...");
+
+    try {
+      const response = await fetch("/api/careers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          role,
+          message,
+          driveLink,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error ?? "Unable to send your application.");
+      }
+
+      setStatus("Thanks! We'll reply soon.");
+      setName("");
+      setEmail("");
+      setRole("");
+      setMessage("");
+      setDriveLink("");
+    } catch (error) {
+      console.error(error);
+      setStatus(
+        error instanceof Error
+          ? error.message
+          : "Failed to send the message. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -74,7 +99,7 @@ export default function CareersPage() {
       <main className="mx-auto flex max-w-7xl flex-col gap-16 px-6 py-10 lg:py-16">
         <section className="grid gap-8  bg-white p-10  lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="space-y-5">
-            <h1 className="text-3xl text-bolder  text-emerald-500">Careers</h1>
+            <h1 className="text-3xl text-bolder text-[#237B80]">Careers</h1>
             <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
               Build with us and engineer the future of dependable technology services.
             </h1>
@@ -196,14 +221,23 @@ export default function CareersPage() {
                 required
               />
             </label>
-            <div className="space-y-1 text-xs uppercase tracking-[0.4em] text-slate-500">
+            <div className="space-y-1 text-2xl uppercase  text-slate-500">
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-[#d958ff] to-[#ff0080] px-6 py-3 text-[15px] font-semibold text-white transition hover:opacity-90"
+                className="flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-[#237B80] to-[#2D9EA4] px-6 py-3 text-[15px] font-semibold text-white transition hover:opacity-90 disabled:opacity-70 disabled:cursor-not-allowed"
+                disabled={isSubmitting}
               >
-                Send Message 
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-              {status && <p className="text-center text-[11px] text-slate-400">{status}</p>}
+              {status && (
+                <p
+                  className="text-center text-[11px] text-slate-400"
+                  role="status"
+                  aria-live="polite"
+                >
+                  {status}
+                </p>
+              )}
             </div>
           </form>
         </section>
