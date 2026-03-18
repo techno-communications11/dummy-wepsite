@@ -21,7 +21,7 @@ export default function HeroSection({ heroHighlights, imageUrl }: HeroSectionPro
             Innovation, reliability, and technology delivered under one roof.
           </h1>
           <p className="text-lg text-slate-600">
-            Techno Communications Global LLC brings together the energy of modern workspaces, collaboration, and the serene confidence you already appreciate on the reference site. We craft IT, BPO, and HR programs with transparency, uptime, and tomorrow’s vision.
+            GAUVARON CORPORATE SOLUTIONS  brings together the energy of modern workspaces, collaboration, and the serene confidence you already appreciate on the reference site. We craft IT, BPO, and HR programs with transparency, uptime, and tomorrow’s vision.
           </p>
           <ul className="space-y-3 text-md text-slate-600">
             {heroHighlights.map((highlight) => (

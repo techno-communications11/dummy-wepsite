@@ -24,20 +24,20 @@ const focusPillars = [
   },
 ];
 
-const timeline = [
-  {
-    year: "2022",
-    detail: "Expanded into new BPO & HR verticals with four large enterprise banking clients.",
-  },
-  {
-    year: "2024",
-    detail: "Launched the cloud-first DevOps studio that unifies infrastructure, security, and automation.",
-  },
-  {
-    year: "2025",
-    detail: "Invested in employee experience programs and community partnerships across Hyderabad.",
-  },
-];
+// const timeline = [
+//   {
+//     year: "2022",
+//     detail: "Expanded into new BPO & HR verticals with four large enterprise banking clients.",
+//   },
+//   {
+//     year: "2024",
+//     detail: "Launched the cloud-first DevOps studio that unifies infrastructure, security, and automation.",
+//   },
+//   {
+//     year: "2025",
+//     detail: "Invested in employee experience programs and community partnerships across Hyderabad.",
+//   },
+// ];
 
 const heroImage =
   "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1000&q=80";
@@ -55,7 +55,7 @@ export default function CeoMessagePage() {
               Purposeful leadership that keeps our people and partners moving forward.
             </h1>
             <p className="text-lg text-slate-600">
-              I am proud to lead Techno Communications Global as we redefine dependable IT, BPO, and HR delivery. Our
+              I am proud to lead GAUVARON CORPORATE SOLUTIONS as we redefine dependable IT, BPO, and HR delivery. Our
               teams partner with you, not just to solve today’s challenges, but to prepare you for what’s next.
               Transparency, measurable outcomes, and a relentless drive to elevate human potential are at the heart of
               our promise.
@@ -92,7 +92,7 @@ export default function CeoMessagePage() {
           </div>
         </section>
 
-        <section className="space-y-6  bg-white p-10 ">
+        {/* <section className="space-y-6  bg-white p-10 ">
           <div>
             <h2 className="text-4xl font-semibold text-pink-900 text-center">Momentum & milestones</h2>
             <p className="mt-3 text-md text-slate-600 text-center">
@@ -107,7 +107,7 @@ export default function CeoMessagePage() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

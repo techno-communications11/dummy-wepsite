@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Techno Communications Group",
   description:
     "Global BPO, IT, and HR services with dependable delivery, inspired by technocommunicationsglobal.com.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

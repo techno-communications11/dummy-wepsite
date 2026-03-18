@@ -13,8 +13,8 @@ const navLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const heroImage = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80";
-const teamworkImage = "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=80";
+const heroImage = "/office.webp";
+const teamworkImage = "/enjoy.webp";
 
 const perks = [
   {
@@ -59,7 +59,7 @@ export default function CareersPage() {
     const gmailUrl = new URL("https://mail.google.com/mail/");
     gmailUrl.searchParams.set("view", "cm");
     gmailUrl.searchParams.set("fs", "1");
-    gmailUrl.searchParams.set("to", "careers@technocommunicationsglobal.com");
+    gmailUrl.searchParams.set("to", "info@gauvaron.com");
     gmailUrl.searchParams.set("su", subject);
     gmailUrl.searchParams.set("body", body);
 
@@ -79,7 +79,7 @@ export default function CareersPage() {
               Build with us and engineer the future of dependable technology services.
             </h1>
             <p className="text-lg text-slate-600">
-              Techno Communications Global invites ambitious technologists, delivery leaders, and operations experts to
+              GAUVARON CORPORATE SOLUTIONS invites ambitious technologists, delivery leaders, and operations experts to
               join our journey. We move quickly, care deeply about people, and shape projects that matter across IT, BPO,
               and HR delivery.
             </p>
@@ -104,7 +104,7 @@ export default function CareersPage() {
 
         <section className="grid gap-10  bg-white p-10  lg:grid-cols-[0.95fr_1fr] lg:items-center">
           <div className="space-y-5">
-            <h2 className="text-3xl font-semibold text-slate-900">Why Join Techno Communications Global?</h2>
+            <h2 className="text-3xl font-semibold text-slate-900">Why Join GAUVARON CORPORATE SOLUTIONS?</h2>
             <p className="text-md text-slate-600">
               We operate with discipline and empathy so that every employee can grow, learn, and feel supported.
             </p>

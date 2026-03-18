@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Email Configuration
+
+The contact form now posts to `app/api/contact/route.ts`, which sends submissions through Gmail SMTP. Create a `.env.local` file (not committed) with the following keys so the Next.js server can authenticate:
+
+```
+GMAIL_SMTP_USER=your@gmail.com
+GMAIL_SMTP_PASS=your-app-password
+CONTACT_RECIPIENT=info@gauvaron.com
+```
+
+Use a Google App Password or equivalent OAuth credential for `GMAIL_SMTP_PASS`; avoid reusing your primary Gmail password. If you need to change the recipient, update `CONTACT_RECIPIENT` to the desired inbox. Restart the dev server after editing `.env.local`.

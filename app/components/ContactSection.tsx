@@ -8,22 +8,22 @@ import ContactForm from "./ContactForm";
 const infoCards = [
   {
     title: "Office Address",
-    body: ["2nd Floor, SCR Towers", "Madhapur, Hyderabad", "India - 500081"],
+    body: ["Madhapur, Hyderabad", "India - 500081"],
     icon: FiMapPin,
   },
   {
     title: "Phone Numbers",
-    body: ["Main: +91 80195 07755", "HR: +91 77021 92636"],
+    body: [" +91 8341174141"],
     icon: FiPhone,
   },
   {
     title: "Email Addresses",
-    body: ["General: info@technocommunicationsglobal.com", "HR: careers@technocommunicationsglobal.com"],
+    body: ["info@gauvaron.com"],
     icon: FiMail,
   },
   {
     title: "Business Hours",
-    body: ["Mon-Fri: 9:00 AM – 7:00 PM", "Sat: 10:00 AM – 2:00 PM", "Sun: Closed"],
+    body: ["Mon-Fri: 9:00 AM – 7:00 PM"],
     icon: FiClock,
   },
 ];

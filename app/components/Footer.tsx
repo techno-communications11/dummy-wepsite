@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 const quickLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Careers", href: "#careers" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -22,36 +22,42 @@ export default function Footer() {
         <div className="space-y-5 md:max-w-sm">
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 overflow-hidden   bg-white">
-              <img src="/logo.webp" alt="Techno Communications Global logo" className="h-full w-full object-cover" />
+              <img src="/Gauvaron.png" alt="GAUVARON CORPORATE SOLUTIONS logo" className="h-full w-full object-cover" />
             </div>
             <div>
-              <p className="text-lg font-semibold tracking-[0.3em] text-[#e10174]">Techno</p>
-              <p className="text-[10px] uppercase tracking-[0.35em] text-slate-400">Communications Global</p>
+              <p className="text-lg font-semibold  text-[#e10174]">GAUVARON CORPORATE SOLUTIONS</p>
             </div>
           </div>
           <p className="text-md leading-relaxed text-slate-400">
             Global BPO, IT, and HR services wrapped in transparency, uptime, and modern collaboration.
           </p>
           <div className="space-y-2 text-md text-slate-400">
-            <p>📍 Hyderabad, Telangana, India</p>
-            <p>✉️ info@technocommunicationsglobal.com</p>
-            <p>☎️ +91 80195 07755</p>
+            <p>📍 Madhapur Hyderabad, Telangana, India</p>
+            <p>✉️ info@gauvaron.com</p>
+            <p>☎️ +91 8341174141</p>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Quick Links</h4>
-          <div className="space-y-2 text-md text-slate-300">
-            {quickLinks.map((link) => (
-              <a key={link.label} href={link.href} className="block hover:text-white">
-                {link.label}
-              </a>
-            ))}
-          </div>
+          <h4 className="text-xl font-semibold   text-slate-500">Quick Links</h4>
+          <nav aria-label="Footer quick links">
+            <div className="space-y-2 text-md text-slate-300">
+              {quickLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  aria-label={`Go to ${link.label}`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </nav>
         </div>
 
         <div className="space-y-4">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Follow Us</h4>
+          <h4 className=" font-semibold text-xl  text-slate-500">Follow Us</h4>
           <div className="flex gap-3">
             {socialIcons.map(({ label, Icon, href }) => (
               <a
@@ -68,7 +74,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-slate-800 bg-[#030512] py-4">
         <div className="mx-auto flex max-w-6xl justify-center px-4 text-[15px]  text-slate-500">
-          <span>© {year} Techno Communications Global PVT LTD. All rights reserved.</span>
+          <span>© {year} GAUVARON CORPORATE SOLUTIONS . All rights reserved.</span>
         </div>
       </div>
     </footer>

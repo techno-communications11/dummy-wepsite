@@ -22,7 +22,7 @@ export default function CareersSection({ openings, imageUrl }: CareersSectionPro
       <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div>
           <p className="text-xs uppercase tracking-[0.4em] text-slate-500">Careers</p>
-          <h3 className="text-3xl font-semibold text-slate-900">Grow with Techno Communications Global</h3>
+          <h3 className="text-3xl font-semibold text-slate-900">Grow with GAUVARON CORPORATE SOLUTIONS</h3>
           <p className="mt-3 text-md text-slate-600">
             We invest in people who thrive in fast-paced, collaborative environments and bring ownership to every engagement.
           </p>
