@@ -55,7 +55,7 @@ export default function CareersPage() {
     setStatus("Sending your application...");
 
     try {
-      const response = await fetch("/api/careers", {
+      const response = await fetch("/careers.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

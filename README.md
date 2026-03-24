@@ -35,17 +35,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Email Configuration
+## PHP deployment (Hostinger-friendly)
 
-The contact form posts to `app/api/contact/route.ts`, which sends submissions through whatever SMTP server you configure. Create a `.env.local` file (not committed) with the following keys and restart your dev server whenever the file changes:
+Run `npm run build && npm run export`, then upload the contents of `out/` through Hostinger’s File Manager; the HTML, `_next`, and everything from `public/` (including `contact.php`, `careers.php`, `email-smtp.php`, and `email-config.example.php`) go directly into the hosting directory and work without Node.js.
 
-```
-MAIL_SMTP_HOST=smtp.zoho.in
-MAIL_SMTP_PORT=465
-MAIL_SMTP_SECURE=true
-MAIL_SMTP_USER=your@zoho-domain.com
-MAIL_SMTP_PASS=your-zoho-app-password
-CONTACT_RECIPIENT=your@zoho-domain.com
-```
+1. Copy `public/email-config.example.php` to `public/email-config.php`, fill in the Zoho SMTP settings (`smtp.zoho.in`, port `465`, SSL, and an app password), and set `recipient`/`careers_recipient` to the inboxes that should receive the two form types. Keep `email-config.php` out of version control (it’s already ignored by `.gitignore`).
+2. Ensure the exported `contact.php` and `careers.php` stay next to the HTML so those scripts can read the POST body, validate the required fields, and relay the message through Zoho SMTP. They already return JSON responses that the UI expects.
+3. Point your domain to the folder you uploaded. The exported forms target `/contact.php` and `/careers.php`, so everything works via PHP with no `/api/` routes needed.
 
-For Zoho mailboxes, `MAIL_SMTP_HOST` should be `smtp.zoho.in` (or `smtp.zoho.com` if you're on the international plan) and port `465` with SSL enabled. Generate an **app password** under Zoho Mail → Security so you don’t reuse your main password. `CONTACT_RECIPIENT` controls where submissions land; using the same Zoho address keeps everything in one inbox. The code still falls back to the previous Gmail-focused env names (`GMAIL_SMTP_USER` / `GMAIL_SMTP_PASS`) if those are present.
+If you want to test the forms locally, run `php -S localhost:8000 -t out/` after exporting and point the frontend’s `fetch` calls to `http://localhost:8000/contact.php`/`careers.php` while running `npm run dev` (or use a proxy). Otherwise simply deploy the exported files with the configured PHP scripts and you’re done.

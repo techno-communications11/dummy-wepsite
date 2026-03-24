@@ -5,6 +5,8 @@ const quickLinks = [
   { label: "Services", href: "#services" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "#contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms" },
 ];
 
 const socialIcons = [
