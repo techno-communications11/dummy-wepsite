@@ -37,12 +37,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Email Configuration
 
-The contact form now posts to `app/api/contact/route.ts`, which sends submissions through Gmail SMTP. Create a `.env.local` file (not committed) with the following keys so the Next.js server can authenticate:
+The contact form posts to `app/api/contact/route.ts`, which sends submissions through whatever SMTP server you configure. Create a `.env.local` file (not committed) with the following keys and restart your dev server whenever the file changes:
 
 ```
-GMAIL_SMTP_USER=your@gmail.com
-GMAIL_SMTP_PASS=your-app-password
-CONTACT_RECIPIENT=info@gauvaron.com
+MAIL_SMTP_HOST=smtp.zoho.in
+MAIL_SMTP_PORT=465
+MAIL_SMTP_SECURE=true
+MAIL_SMTP_USER=your@zoho-domain.com
+MAIL_SMTP_PASS=your-zoho-app-password
+CONTACT_RECIPIENT=your@zoho-domain.com
 ```
 
-Use a Google App Password or equivalent OAuth credential for `GMAIL_SMTP_PASS`; avoid reusing your primary Gmail password. If you need to change the recipient, update `CONTACT_RECIPIENT` to the desired inbox. Restart the dev server after editing `.env.local`.
+For Zoho mailboxes, `MAIL_SMTP_HOST` should be `smtp.zoho.in` (or `smtp.zoho.com` if you're on the international plan) and port `465` with SSL enabled. Generate an **app password** under Zoho Mail → Security so you don’t reuse your main password. `CONTACT_RECIPIENT` controls where submissions land; using the same Zoho address keeps everything in one inbox. The code still falls back to the previous Gmail-focused env names (`GMAIL_SMTP_USER` / `GMAIL_SMTP_PASS`) if those are present.

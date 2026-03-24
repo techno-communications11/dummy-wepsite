@@ -39,9 +39,11 @@ export async function POST(request: NextRequest) {
 
     const mailer = ensureTransporter();
     const recipient = process.env.CONTACT_RECIPIENT ?? DEFAULT_RECIPIENT;
+    const senderAddress =
+      process.env.MAIL_SMTP_USER ?? process.env.GMAIL_SMTP_USER ?? "";
 
     await mailer.sendMail({
-      from: `"Gauvaron Careers" <${process.env.GMAIL_SMTP_USER}>`,
+      from: `"Gauvaron Careers" <${senderAddress}>`,
       to: recipient,
       replyTo: trimmedPayload.email,
       subject: `[Career Interest] ${trimmedPayload.role}`,
