@@ -17,8 +17,6 @@
 /.next/
 /out/
 
-public/email-config.php
-
 # production
 /build
 
@@ -34,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.example
+!public/.env.example
 
 # vercel
 .vercel

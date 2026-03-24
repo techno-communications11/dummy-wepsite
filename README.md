@@ -37,10 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## PHP deployment (Hostinger-friendly)
 
-Run `npm run build && npm run export`, then upload the contents of `out/` through Hostinger’s File Manager; the HTML, `_next`, and everything from `public/` (including `contact.php`, `careers.php`, `email-smtp.php`, and `email-config.example.php`) go directly into the hosting directory and work without Node.js.
+Run `npm run build && npm run export`, then upload the contents of `out/` through Hostinger’s File Manager; the HTML, `_next`, and everything from `public/` (including `contact.php`, `careers.php`, and `.env.example`) go directly into the hosting directory and work without Node.js.
 
-1. Copy `public/email-config.example.php` to `public/email-config.php`, fill in the Zoho SMTP settings (`smtp.zoho.in`, port `465`, SSL, and an app password), and set `recipient`/`careers_recipient` to the inboxes that should receive the two form types. Keep `email-config.php` out of version control (it’s already ignored by `.gitignore`).
-2. Ensure the exported `contact.php` and `careers.php` stay next to the HTML so those scripts can read the POST body, validate the required fields, and relay the message through Zoho SMTP. They already return JSON responses that the UI expects.
-3. Point your domain to the folder you uploaded. The exported forms target `/contact.php` and `/careers.php`, so everything works via PHP with no `/api/` routes needed.
+1. Copy `public/.env.example` to `.env` inside the exported folder, edit the Zoho SMTP values (host `smtp.zoho.in`, port `465`, `SMTP_SECURE=ssl`, `SMTP_USER` = your Zoho account, `SMTP_PASS` = the Zoho app password) along with `SMTP_RECIPIENT`/`SMTP_CAREERS_RECIPIENT`, and keep the resulting `.env` private (do not commit it).
+2. Make sure the exported `contact.php` and `careers.php` remain beside the HTML so they can read `php://input`, validate the fields, and relay the message through Zoho SMTP; they already respond with JSON that the UI expects.
+3. Upload the folder to Hostinger (the PHP files alongside `index.html`/`careers/index.html`), then point your domain at it. The exported forms post to `/contact.php` and `/careers.php`, so everything works via PHP with no `/api/` routes needed.
 
-If you want to test the forms locally, run `php -S localhost:8000 -t out/` after exporting and point the frontend’s `fetch` calls to `http://localhost:8000/contact.php`/`careers.php` while running `npm run dev` (or use a proxy). Otherwise simply deploy the exported files with the configured PHP scripts and you’re done.
+To test locally, run `php -S localhost:8000 -t out/` after exporting and target `http://localhost:8000/contact.php`/`careers.php` from your UI (use a proxy if needed). Otherwise simply deploy the exported files with the configured `.env` and you’re done.
